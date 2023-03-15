@@ -79,9 +79,10 @@ func main() {
 							_, err := net.ParseMAC(param)
 							if err != nil {
 								message = "That's an invalid MAC-address I'm afraid."
+							} else {
+								wol.Send("255.255.255.255", "9", param)
+								message = "Right away, sir!"
 							}
-							wol.Send("255.255.255.255", "9", param)
-							message = "Right away, sir!"
 						}
 					}
 				}
