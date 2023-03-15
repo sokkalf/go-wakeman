@@ -71,7 +71,7 @@ func main() {
 				}
 				if len(m.Params) == 2 {
 					cmdArr := strings.SplitN(m.Param(1), " ", 2)
-					if len(cmdArr) == 2 {
+					if len(cmdArr) >= 2 {
 						cmd := cmdArr[0]
 						param := cmdArr[1]
 
@@ -84,9 +84,10 @@ func main() {
 								message = "Right away, sir!"
 							}
 						}
+					} else {
+						message = "I'm going to need to know who to wake up, sir."
 					}
 				}
-				//message = m.Prefix.Name + ": " + message
 			}
 			if len(message) > 0 {
 				b.Msg(target, message)
