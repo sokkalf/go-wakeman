@@ -84,8 +84,6 @@ func main() {
 								message = "Right away, sir!"
 							}
 						}
-					} else {
-						message = "I'm going to need to know who to wake up, sir."
 					}
 				}
 			}
