@@ -69,7 +69,7 @@ func main() {
 				if target[0] == '@' || target[0] == '+' {
 					target = target[1:]
 				}
-				if len(m.Params) >= 2 {
+				if len(m.Params) == 2 {
 					cmdArr := strings.SplitN(m.Param(1), " ", 2)
 					if len(cmdArr) >= 2 {
 						cmd := cmdArr[0]
@@ -84,8 +84,9 @@ func main() {
 								message = "Right away, sir!"
 							}
 						}
-				} else {
-					message = "I'm going to need to know who to wake up, sir."
+					} else {
+						message = "I'm going to need to know who to wake up, sir."
+					}
 				}
 			}
 			if len(message) > 0 {
